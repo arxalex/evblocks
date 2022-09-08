@@ -1,0 +1,68 @@
+.phone-left {
+  left: 30px;
+}
+
+.phone-right {
+  right: 30px;
+}
+
+.phone-background {
+  padding: 10% 0 10% 11%;
+  right: 15px;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.phone-background img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: left;
+}
+
+.code-design p {
+  color: gray;
+  margin: 0;
+}
+
+.code-design-block:hover .phone-left .shadow {
+  box-shadow: #f00a -25px 0px 75px;
+}
+
+.code-design-block:hover .phone-right .shadow {
+  box-shadow: #00fa 25px 0px 75px;
+}
+
+.shadow {
+  margin: 0% 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: -2;
+  border-radius: 20%;
+  transition: 200ms ease-in-out;
+}
+
+.phone-right .shadow {
+  right: calc(15px + 1%);
+}
+
+.phone-left .shadow {
+  left: calc(15px + 1%);
+}
+
+.code-design p {
+  font-size: unset;
+}
+
+@media (max-width: 767px) {
+  .code-design {
+    position: unset !important;
+    top: calc(100% + 30px) !important;
+    transform: unset !important;
+    margin: 0 -30px;
+  }
+}

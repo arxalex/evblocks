@@ -1,0 +1,7 @@
+<div class='socials-container'>
+{% for social in socials %}
+<div class='social-item'>
+    <a href='{{ social.href }}'><i class='{{ social.icon }}'></i></a>
+</div>
+{% endfor %}
+</div>

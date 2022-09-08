@@ -1,0 +1,44 @@
+main:
+  css:
+    theme:
+      css/main.css: {}
+
+text:
+  css:
+    theme:
+      css/text.css: {}
+
+main-slide:
+  css:
+    theme:
+      css/slide.css: {}
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js: {type: external, minified: true}
+    https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js: {type: external, minified: true}
+    https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/Draggable.min.js: {type: external, minified: true}
+    js/slide.js: {}
+
+main-code-design:
+  css:
+    theme:
+      css/code-design.css: {}
+
+main-about:
+  css:
+    theme:
+      css/about.css: {}
+
+common:
+  css:
+    theme:
+      css/common.css: {}
+
+social:
+  css:
+    theme:
+      css/social.css: {}
+
+language:
+  css:
+    theme:
+      css/language.css: {}

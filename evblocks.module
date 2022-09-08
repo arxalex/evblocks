@@ -1,0 +1,111 @@
+<?
+
+/**
+ * Implements hook_theme().
+ */
+function evblocks_theme($existing, $type, $theme, $path)
+{
+  return [
+    'front_main_block_template' => [
+      'render element' => 'children',
+      'template' => 'front-main-block-template',
+      'path' => $path . '/templates',
+      'variables' => [
+        'materials' => '/modules/custom/evblocks/materials/',
+        'header' => NULL,
+        'text' => NULL,
+        'path' => NULL,
+        '#attached' => [
+          'library' => [
+            'evblocks/main',
+          ],
+        ],
+      ],
+    ],
+    'text_block_template' => [
+      'render element' => 'children',
+      'template' => 'text-block-template',
+      'path' => $path . '/templates',
+      'variables' => [
+        'header' => NULL,
+        'text' => NULL,
+        '#attached' => [
+          'library' => [
+            'evblocks/text',
+          ],
+        ],
+      ],
+    ],
+    'main_slide_block_template' => [
+      'render element' => 'children',
+      'template' => 'main-slide-block-template',
+      'path' => $path . '/templates',
+      'variables' => [
+        'text' => NULL,
+        'slides' => NULL,
+        'total' => NULL,
+        '#attached' => [
+          'library' => [
+            'evblocks/main-slide',
+          ],
+        ],
+      ],
+    ],
+    'social_block_template' => [
+      'render element' => 'children',
+      'template' => 'social-block-template',
+      'path' => $path . '/templates',
+      'variables' => [
+        'socials' => NULL,
+        'text' => NULL,
+        '#attached' => [
+          'library' => [
+            'evblocks/social',
+          ],
+        ],
+      ],
+    ],
+    'language_block_template' => [
+      'render element' => 'children',
+      'template' => 'language-block-template',
+      'path' => $path . '/templates',
+      'variables' => [
+        'lg' => NULL,
+        'text' => NULL,
+        'current' => NULL,
+        '#attached' => [
+          'library' => [
+            'evblocks/language',
+          ],
+        ],
+      ],
+    ],
+    'main_code_design_block_template' => [
+      'render element' => 'children',
+      'template' => 'main-code-design-block-template',
+      'path' => $path . '/templates',
+      'variables' => [
+        'materials' => '/modules/custom/evblocks/materials/',
+        'path' => NULL,
+        '#attached' => [
+          'library' => [
+            'evblocks/main-code-design',
+            'evblocks/common',
+          ],
+        ],
+      ],
+    ],
+    'main_about_block_template' => [
+      'render element' => 'children',
+      'template' => 'main-about-block-template',
+      'variables' => [
+        '#attached' => [
+          'library' => [
+            'evblocks/main-about',
+            'evblocks/common',
+          ],
+        ],
+      ],
+    ],
+  ];
+}

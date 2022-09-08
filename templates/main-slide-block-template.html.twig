@@ -1,0 +1,31 @@
+<div class="slide-container">
+    <div class="controls">
+        <div class="prev" onclick="prev()"><span>Prev</span></div>
+        <div class="next" onclick="next()"><span>Next</span></div>
+    </div>
+    {% for slide in slides %}
+        <div class="slide">
+            <div class="inner-text-container">
+                <div class="inner-text">
+                    <div class="slide-number">
+                        <span class='current'>{{ slide.current }}</span>
+                        <span class='total'>/ {{ total }}</span>
+                    </div>
+                    <a href='{{ slide.href }}' data-clickable="true"><h1 data-clickable="true" href='{{ slide.href }}'>{{ slide.header | raw }}</h1></a>
+                    <div class="description">
+                        <span class='type'><strong>{{ slide.desc1 }}</strong></span>
+                        <span class='industry'>{{ 'Industry' | t}}: <strong>{{ slide.desc2 }}</strong></span>
+                    </div>
+                </div>
+            </div>
+            <div style='filter: brightness({{ slide.bg }})' class="slide-background">
+                {% if slide.video %}
+                <video loop muted src='{{ slide.video }}'></video>
+                {% endif %}
+                {% if slide.image %}
+                <img src='{{ slide.image }}'>
+                {% endif %}
+            </div>          
+        </div>
+    {% endfor %}
+</div>

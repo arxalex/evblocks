@@ -1,0 +1,12 @@
+<div class='language-switcher'>
+    <div class='dropdown'>
+        <a class="dropdown-toggle" type="button" id="LanguageMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{ current }}</a>
+        <div class="dropdown-menu" aria-labelledby="LanguageMenu">
+            <ul>
+            {% for l in lg %}
+                <li><a href='{{l.href}}'>{{ l.text }}</a></li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>

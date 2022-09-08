@@ -1,0 +1,8 @@
+name: Ev Blocks
+description: Awesome Blocks Module
+package: Custom
+
+type: module
+core_version_requirement: ^9
+
+php: 5.6
