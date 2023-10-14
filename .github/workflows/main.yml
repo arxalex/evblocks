@@ -5,10 +5,13 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: FTP Interactions
-        uses: priradev/ftp-interactions@v0.2.9-beta
+      - name: FTP Mirror
+        uses: modern-dev/ftp-mirror@v2
         with:
-          host: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
+          server: ${{ secrets.FTP_SERVER }}
+          user: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          ignoreCertificateErrors: true
+          # Delete all the files inside of the remote directory.
+          delete: true
+          # FTP - Allow SSL encryption.
+          ftp_ssl_allow: false
