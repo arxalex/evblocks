@@ -5,8 +5,10 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: FTP Mirror
-        uses: modern-dev/ftp-mirror@v2
+      - name: FTP Deployment
+        # You may pin to the exact commit or the version.
+        # uses: airvzxf/ftp-deployment-action@9efe025c218094bd451a0cb684d7cb471f4d9d4f
+        uses: airvzxf/ftp-deployment-action@latest
         with:
           server: ${{ secrets.FTP_SERVER }}
           user: ${{ secrets.FTP_USERNAME }}
