@@ -20,7 +20,7 @@
             </div>
             <div style='filter: brightness({{ slide.bg }})' class="slide-background">
                 {% if slide.video %}
-                <video loop muted src='{{ slide.video }}'></video>
+                <video loop muted playsinline src='{{ slide.video }}'></video>
                 {% endif %}
                 {% if slide.image %}
                 <img src='{{ slide.image }}'>
