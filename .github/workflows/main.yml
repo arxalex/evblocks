@@ -1,19 +1,20 @@
-name: Deploy via ftp
-on: push
+name: 🚀 Deploy
+on:
+  push:
+    branches: [ master ]
+
 jobs:
-  deploy:
-    name: Deploy
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: FTP Deployment
-        # You may pin to the exact commit or the version.
-        # uses: airvzxf/ftp-deployment-action@9efe025c218094bd451a0cb684d7cb471f4d9d4f
-        uses: airvzxf/ftp-deployment-action@latest
+      - uses: actions/checkout@v2
+      # Here is the deployment action
+      - name: Upload from output to a remote server via FTP
+        uses: modern-dev/ftp-mirror@v2
         with:
           server: ${{ secrets.FTP_SERVER }}
           user: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          # Delete all the files inside of the remote directory.
-          delete: true
-          # FTP - Allow SSL encryption.
-          ftp_ssl_allow: false
+          local_dir: "./"
+          remote_dir: "./"
+          delete: "false"
